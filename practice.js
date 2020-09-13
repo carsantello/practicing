@@ -35,6 +35,15 @@ mujer1 = {
     raza: 'caucasica'
 }
 
+var myHuman = new Object()
+myHuman.edad = 19;
+myHuman.rand = Math.random();
+myHuman.estatura;
+myHuman.raza;
+
+//myHuman(21, 'medio', 'negro');
+console.log(myHuman.rand);
+
 function saludar(humano) {
     //    var nombre  = humano.nombre; this is exactly as the below line
     var { nombre } = humano;
