@@ -7,8 +7,8 @@ function toMayus() {
 }
 
 function toMinus() {
-    name1 = nameCar.toLowerCase()
-    console.log(name1);
+    name2 = nameManu.toLowerCase()
+    console.log(name2);
 }
 toMayus();
 toMinus();
@@ -18,7 +18,14 @@ hombre1 = {
     edad: 38,
     complexion: 'robusta',
     estatura: 'baja',
-    raza: 'asiatico'
+    raza: 'asiatico',
+    /**
+            eleccion: function choice() {
+                number2 = Math.random;
+                console.log(number2);
+                return number2;
+            }
+    */
 }
 mujer1 = {
     nombre: 'Petra Hanks',
@@ -31,12 +38,24 @@ mujer1 = {
 function saludar(humano) {
     //    var nombre  = humano.nombre; this is exactly as the below line
     var { nombre } = humano;
-    var edad = humano.edad;
-    var raza = humano.raza;
+    //    var edad = humano.edad;
+    var { edad } = humano;
+    //    var raza = humano.raza;
+    var { raza } = humano;
+    //    var { eleccion } = humano;
     console.log('Hola, soy: ' + `${nombre}`);
     console.log('Tengo: ' + `${edad}` + ' ' + 'annios');
     console.log('Y mi raza es : ' + `${raza}`);
-    //    console.log(estatura);
+    //    console.log({ nombre });
+    console.log(nombre);
+    if (nombre == 'Huan Lee') {
+        //        choice(5);
+        //        console.log(choice);
+        //        console.log('Yes, the person is : ' + `${ nombre }` + ' and my election was: ' + `${eleccion}`);
+        console.log('Yes, the person is : ' + `${ nombre }`);
+    } else {
+        console.log('No, the lady is : ' + `${ nombre }`);
+    }
 }
 
 saludar(hombre1);
