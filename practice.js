@@ -1,11 +1,16 @@
 var nameCar = 'Carlos';
 var nameManu = 'Manu';
 
-function toMinus() {
+function toMayus() {
     name1 = nameCar.toUpperCase()
     console.log(name1);
 }
 
+function toMinus() {
+    name1 = nameCar.toLowerCase()
+    console.log(name1);
+}
+toMayus();
 toMinus();
 
 hombre1 = {
@@ -24,9 +29,13 @@ mujer1 = {
 }
 
 function saludar(humano) {
-    var nombre = humano.nombre;
-    console.log(nombre);
+    //    var nombre  = humano.nombre; this is exactly as the below line
+    var { nombre } = humano;
+    var edad = humano.edad;
+    var raza = humano.raza;
     console.log('Hola, soy: ' + `${nombre}`);
+    console.log('Tengo: ' + `${edad}` + ' ' + 'annios');
+    console.log('Y mi raza es : ' + `${raza}`);
     //    console.log(estatura);
 }
 
