@@ -20,7 +20,7 @@ toMinus();
 
 hombre1 = {
     nombre: 'Huan Lee',
-    edad: 38,
+    edad: 35,
     complexion: 'robusta',
     estatura: 'baja',
     raza: 'asiatico',
@@ -85,5 +85,18 @@ function saludar(humano) {
     }
 }
 
+console.log('la edad :' + hombre1.edad);
+
+function cumpleanios(hombre1) {
+    return {
+        ...hombre1,
+        edad: hombre1.edad += 1
+    }
+    //    return edad;
+}
+
 saludar(hombre1);
 saludar(mujer1);
+cumpleanios(hombre1);
+console.log(hombre1.edad);
+hombre1;
