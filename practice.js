@@ -1,16 +1,21 @@
+var personita = {
+    personitaName: 'Pedro',
+    personitaLastName: 'Paramo',
+    personitaEdad: 99
+}
 var nameCar = 'Carlos';
 var nameManu = 'Manu';
 
-function toMayus() {
-    name1 = nameCar.toUpperCase()
-    console.log(name1);
+function toMayus({ personitaName }) {
+    //    var personitaUpperName = personitaName.toUpperCase()
+    console.log(personitaName.toUpperCase());
 }
 
 function toMinus() {
     name2 = nameManu.toLowerCase()
     console.log(name2);
 }
-toMayus();
+toMayus(personita);
 toMinus();
 
 hombre1 = {
@@ -35,14 +40,27 @@ mujer1 = {
     raza: 'caucasica'
 }
 
-var myHuman = new Object()
-myHuman.edad = 19;
-myHuman.rand = Math.random();
-myHuman.estatura;
-myHuman.raza;
+const human = new Object(),
+    name = 'Carlos',
+    lastName = 'Sanchez',
+    gender = 'male',
+    age = 37
+
+console.log(typeof(human));
+console.log(`${ name }`);
+for (const property in mujer1) {
+    console.log(`${property}:${mujer1[property]}`);
+}
+/**
+    function iterate(myHuman) {
+        console.log('enter function')
+        console.log(rand);
+    }
+    
+*/
+//iterate();
 
 //myHuman(21, 'medio', 'negro');
-console.log(myHuman.rand);
 
 function saludar(humano) {
     //    var nombre  = humano.nombre; this is exactly as the below line
