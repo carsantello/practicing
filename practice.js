@@ -44,12 +44,36 @@ const human = new Object(),
     name = 'Carlos',
     lastName = 'Sanchez',
     gender = 'male',
-    age = 37
+    age = 37,
+    rocker = true,
+    sportbilly = false,
+    learner = true,
+    engineer = true,
+    singer = false,
+    dreamer = true,
+    guitarrist = false
 
 console.log(typeof(human));
 console.log(`${ name }`);
 for (const property in mujer1) {
     console.log(`${property}:${mujer1[property]}`);
+}
+if (`${rocker}`) {
+    console.log(`Yes, ${name} is already a rocker`);
+} else {
+    console.log(`No, ${name} is not a rocker`);
+}
+
+if (`${sportbilly}` === false) {
+    console.log(`Yes, ${name} is already a sportbilly`);
+} else {
+    console.log(`No, ${name} is not a sportbilly`);
+}
+
+if (`${learner}`) {
+    console.log(`Yes, ${name} is already a lerner`);
+} else {
+    console.log(`No, ${name} is not a lerner`);
 }
 /**
     function iterate(myHuman) {
@@ -100,3 +124,13 @@ saludar(mujer1);
 cumpleanios(hombre1);
 console.log(hombre1.edad);
 hombre1;
+
+function printIfPlus18(person) {
+    if (`${person.edad}` >= 18) {
+        console.log(`${person.nombre} es mayor de edad`);
+    } else {
+        console.log(`${person.nombre} es menor de edad`);
+    }
+}
+
+printIfPlus18(hombre1);
