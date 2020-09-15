@@ -74,35 +74,55 @@ male = {
 female = {
     name: 'Constanza Atkins',
     age: 19,
-    sportbilly: true
+    sportbilly: true,
+    rocker: false
 
 }
 
-console.log(typeof(female));
-console.log(`${ female.name }`);
+console.log(female);
+console.log(`${ female.rocker }`);
 for (const property in mujer1) {
     console.log(`${property}:${mujer1[property]}`);
 }
 
 function hobbiesProfessions(humans) {
-    console.log(`${ humans.age }`);
-    if (`${humans.rocker}`) {
+
+    if (humans.rocker) {
         console.log(`Yes, ${humans.name} is already a rocker`);
     } else {
         console.log(`No, ${humans.name} is not a rocker`);
     }
 
-    if (`${humans.sportbilly}` === false) {
+    if (humans.sportbilly) {
         console.log(`Yes, ${humans.name} is already a sportbilly`);
     } else {
         console.log(`No, ${humans.name} is not a sportbilly`);
     }
-
-    if (`${humans.learner}`) {
+    //    console.log(`${humans.learner}`);
+    if (humans.learner) {
         console.log(`Yes, ${humans.name} is already a lerner`);
     } else {
         console.log(`No, ${humans.name} is not a lerner`);
     }
+    /**
+            if (`${humans.rocker}`) {
+                console.log(`Yes, ${humans.name} is already a rocker`);
+            } else {
+                console.log(`No, ${humans.name} is not a rocker`);
+            }
+        
+            if (`${humans.sportbilly}`) {
+                console.log(`Yes, ${humans.name} is already a sportbilly`);
+            } else {
+                console.log(`No, ${humans.name} is not a sportbilly`);
+            }
+            //    console.log(`${humans.learner}`);
+            if (`${humans.learner}`) {
+                console.log(`Yes, ${humans.name} is already a lerner`);
+            } else {
+                console.log(`No, ${humans.name} is not a lerner`);
+            }
+    */
     /**
             if (`${age}` >= 18) {
                 console.log(`${name} es mayor de edad`);
@@ -163,9 +183,14 @@ hombre1;
 
 const LEGAL_AGE = 18;
 
-function legalAge(person) {
-    return `${person.age}` >= LEGAL_AGE;
-}
+/**
+    var legalAge = function(person) {
+        return `${person.age}` >= LEGAL_AGE;
+    }
+*/
+//the arrow function gaves us this notation
+const legalAge = person => `${person.age}` >= LEGAL_AGE;
+
 
 function printIfPlus18(person) {
     if (legalAge(person)) {
@@ -180,3 +205,10 @@ printIfPlus18(female);
 //printIfPlus18(human);
 hobbiesProfessions(male);
 hobbiesProfessions(female);
+
+Promise.resolve().then(function() {
+    console.log('Hola');
+})
+console.log('Mundo');
+
+let objeto = new(function Clase() {})
