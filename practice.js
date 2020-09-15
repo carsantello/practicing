@@ -85,23 +85,23 @@ for (const property in mujer1) {
 }
 
 function hobbiesProfessions(humans) {
-    console.log(`${ age }`);
-    if (`${rocker}`) {
-        console.log(`Yes, ${name} is already a rocker`);
+    console.log(`${ humans.age }`);
+    if (`${humans.rocker}`) {
+        console.log(`Yes, ${humans.name} is already a rocker`);
     } else {
-        console.log(`No, ${name} is not a rocker`);
+        console.log(`No, ${humans.name} is not a rocker`);
     }
 
-    if (`${sportbilly}` === false) {
-        console.log(`Yes, ${name} is already a sportbilly`);
+    if (`${humans.sportbilly}` === false) {
+        console.log(`Yes, ${humans.name} is already a sportbilly`);
     } else {
-        console.log(`No, ${name} is not a sportbilly`);
+        console.log(`No, ${humans.name} is not a sportbilly`);
     }
 
-    if (`${learner}`) {
-        console.log(`Yes, ${name} is already a lerner`);
+    if (`${humans.learner}`) {
+        console.log(`Yes, ${humans.name} is already a lerner`);
     } else {
-        console.log(`No, ${name} is not a lerner`);
+        console.log(`No, ${humans.name} is not a lerner`);
     }
     /**
             if (`${age}` >= 18) {
@@ -171,11 +171,11 @@ function printIfPlus18(person) {
     if (legalAge(person)) {
         console.log(`${person.name} es mayor de edad`);
     } else {
-        console.log(`${name} es menor de edad`);
+        console.log(`${person.name} es menor de edad`);
     }
 }
 
-printIfPlus18(hombre1);
+printIfPlus18(male);
 printIfPlus18(female);
 //printIfPlus18(human);
 hobbiesProfessions(male);
