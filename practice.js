@@ -40,40 +40,76 @@ mujer1 = {
     raza: 'caucasica'
 }
 
-const human = new Object(),
-    name = 'Carlos',
-    lastName = 'Sanchez',
-    gender = 'male',
-    age = 37,
-    rocker = true,
-    sportbilly = false,
-    learner = true,
-    engineer = true,
-    singer = false,
-    dreamer = true,
-    guitarrist = false
+/**
+    var male = new Object(),
+        name = 'Carlos',
+        lastName = 'Sanchez',
+        gender = 'male',
+        age = 17,
+        rocker = true,
+        sportbilly = false,
+        learner = true,
+        engineer = true,
+        singer = false,
+        dreamer = true,
+        guitarrist = false
+    
+*/
+male = {
+    name: 'Carlos',
+    lastName: 'Sanchez',
+    gender: 'male',
+    age: 17,
+    rocker: true,
+    sportbilly: false,
+    learner: true,
+    engineer: true,
+    singer: false,
+    dreamer: true,
+    guitarrist: false
 
-console.log(typeof(human));
-console.log(`${ name }`);
+}
+
+
+female = {
+    name: 'Constanza Atkins',
+    age: 19,
+    sportbilly: true
+
+}
+
+console.log(typeof(female));
+console.log(`${ female.name }`);
 for (const property in mujer1) {
     console.log(`${property}:${mujer1[property]}`);
 }
-if (`${rocker}`) {
-    console.log(`Yes, ${name} is already a rocker`);
-} else {
-    console.log(`No, ${name} is not a rocker`);
-}
 
-if (`${sportbilly}` === false) {
-    console.log(`Yes, ${name} is already a sportbilly`);
-} else {
-    console.log(`No, ${name} is not a sportbilly`);
-}
+function hobbiesProfessions(humans) {
+    console.log(`${ age }`);
+    if (`${rocker}`) {
+        console.log(`Yes, ${name} is already a rocker`);
+    } else {
+        console.log(`No, ${name} is not a rocker`);
+    }
 
-if (`${learner}`) {
-    console.log(`Yes, ${name} is already a lerner`);
-} else {
-    console.log(`No, ${name} is not a lerner`);
+    if (`${sportbilly}` === false) {
+        console.log(`Yes, ${name} is already a sportbilly`);
+    } else {
+        console.log(`No, ${name} is not a sportbilly`);
+    }
+
+    if (`${learner}`) {
+        console.log(`Yes, ${name} is already a lerner`);
+    } else {
+        console.log(`No, ${name} is not a lerner`);
+    }
+    /**
+            if (`${age}` >= 18) {
+                console.log(`${name} es mayor de edad`);
+            } else {
+                console.log(`${name} es menor de edad`);
+            }
+    */
 }
 /**
     function iterate(myHuman) {
@@ -81,7 +117,7 @@ if (`${learner}`) {
         console.log(rand);
     }
     
-*/
+    */
 //iterate();
 
 //myHuman(21, 'medio', 'negro');
@@ -109,7 +145,7 @@ function saludar(humano) {
     }
 }
 
-console.log('la edad :' + hombre1.edad);
+//console.log('la edad :' + hombre1.edad);
 
 function cumpleanios(hombre1) {
     return {
@@ -125,12 +161,22 @@ cumpleanios(hombre1);
 console.log(hombre1.edad);
 hombre1;
 
+const LEGAL_AGE = 18;
+
+function legalAge(person) {
+    return `${person.age}` >= LEGAL_AGE;
+}
+
 function printIfPlus18(person) {
-    if (`${person.edad}` >= 18) {
-        console.log(`${person.nombre} es mayor de edad`);
+    if (legalAge(person)) {
+        console.log(`${person.name} es mayor de edad`);
     } else {
-        console.log(`${person.nombre} es menor de edad`);
+        console.log(`${name} es menor de edad`);
     }
 }
 
 printIfPlus18(hombre1);
+printIfPlus18(female);
+//printIfPlus18(human);
+hobbiesProfessions(male);
+hobbiesProfessions(female);
