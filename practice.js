@@ -11,27 +11,47 @@ function toMayus({ personitaName }) {
     console.log(personitaName.toUpperCase());
 }
 
-function toMinus() {
-    name2 = nameManu.toLowerCase()
-    console.log(name2);
+const toMin = ({ nombre }) => nombre.toUpperCase();
+
+function toMinus(nombre) {
+    console.log(toMin(nombre));
+    toMin(nombre);
+    console.log(`${hombre1.nombre}  - este es el nombre pasado por la funcion de minusculas`);
+    //    console.log(`${ nombre } se ha convertido a minus`);
 }
+
+function toExpand(hombre1) {
+    return {
+        ...hombre1
+        //        console.log(hombre1);
+    }
+}
+
 toMayus(personita);
-toMinus();
 
 hombre1 = {
-    nombre: 'Huan Lee',
+    nombre: 'Huancho Leen',
     edad: 35,
     complexion: 'robusta',
     estatura: 'baja',
     raza: 'asiatico',
     /**
-            eleccion: function choice() {
-                number2 = Math.random;
-                console.log(number2);
-                return number2;
-            }
-    */
+     eleccion: function choice() {
+         number2 = Math.random;
+         console.log(number2);
+         return number2;
+        }
+        */
 }
+console.log('about to enter to toMinus function');
+/**
+    toExpand(hombre1);
+    console.log(hombre1);
+*/
+//console.log(hombre1 === hombre1);
+toMinus(hombre1);
+
+
 mujer1 = {
     nombre: 'Petra Hanks',
     edad: 46,
@@ -39,7 +59,7 @@ mujer1 = {
     estatura: 'alta',
     raza: 'caucasica'
 }
-
+toMinus(mujer1);
 /**
     var male = new Object(),
         name = 'Carlos',
@@ -189,7 +209,8 @@ const LEGAL_AGE = 18;
     }
 */
 //the arrow function gaves us this notation
-const legalAge = person => `${person.age}` >= LEGAL_AGE;
+const legalAge = ({ age }) => age >= LEGAL_AGE;
+
 
 
 function printIfPlus18(person) {
@@ -200,15 +221,59 @@ function printIfPlus18(person) {
     }
 }
 
+
+function isLegalAge(person) {
+    if (!legalAge(person)) {
+        console.log(`MMhh no, sorry, ${person.name} is below legal age`);
+    }
+}
+
+function allowAcces(person) {
+    if (!legalAge(person)) {
+        console.log('Access denied!!');
+    }
+}
+isLegalAge(male);
+isLegalAge(female);
 printIfPlus18(male);
 printIfPlus18(female);
 //printIfPlus18(human);
 hobbiesProfessions(male);
 hobbiesProfessions(female);
-
+allowAcces(male);
+allowAcces(female);
 Promise.resolve().then(function() {
     console.log('Hola');
 })
 console.log('Mundo');
 
 let objeto = new(function Clase() {})
+
+/**
+    function dummy({
+        if (Math.floor(Date.now() / 1000) % 2 === 0)
+            return Promise.resolve('Hello, world!');
+        return Promise.reject('error!');
+    })
+    
+    dummy();
+*/
+//class 20 18/09/2020
+var personas = [hombre1, mujer1];
+console.log(personas.length);
+/**
+    personas.forEach(nombre => {
+        console.log(personas);
+        console.log(nombre);
+    });
+*/
+for (i = 0; i < personas.length; i++) {
+    //    console.log({ nombre: personas[i] });
+    var persons = personas[i];
+    console.log(`${persons.nombre } es de raza: ${persons.raza }  y de complexion: ${persons.complexion }  `);
+}
+
+const esVieja = ({ edad }) => edad > 37;
+
+var personasViejas = personas.filter(esVieja)
+console.log(personasViejas);
