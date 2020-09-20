@@ -34,6 +34,7 @@ hombre1 = {
     edad: 35,
     complexion: 'robusta',
     estatura: 'baja',
+    altura: 1.86,
     raza: 'asiatico',
     /**
      eleccion: function choice() {
@@ -57,6 +58,7 @@ mujer1 = {
     edad: 46,
     complexion: 'delgada',
     estatura: 'alta',
+    altura: 1.56,
     raza: 'caucasica'
 }
 toMinus(mujer1);
@@ -277,3 +279,12 @@ const esVieja = ({ edad }) => edad > 37;
 
 var personasViejas = personas.filter(esVieja)
 console.log(personasViejas);
+
+//class 21 - transforming an array
+//const pasarPersonasAltas = ({ altura }) => altura * 100;
+const pasarPersonasAltas = persona => {
+    persona.altura * 100
+    return persona;
+}
+var personasCms = personas.map(pasarPersonasAltas);
+console.log(personasCms);
