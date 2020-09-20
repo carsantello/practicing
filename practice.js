@@ -35,6 +35,7 @@ hombre1 = {
     complexion: 'robusta',
     estatura: 'baja',
     altura: 1.86,
+    libros: 24,
     raza: 'asiatico',
     /**
      eleccion: function choice() {
@@ -59,6 +60,7 @@ mujer1 = {
     complexion: 'delgada',
     estatura: 'alta',
     altura: 1.56,
+    libros: 156,
     raza: 'caucasica'
 }
 toMinus(mujer1);
@@ -282,9 +284,15 @@ console.log(personasViejas);
 
 //class 21 - transforming an array
 //const pasarPersonasAltas = ({ altura }) => altura * 100;
-const pasarPersonasAltas = persona => {
-    persona.altura * 100
-    return persona;
-}
+const pasarPersonasAltas = persona => ({
+    ...persona,
+    altura: persona.altura * 100
+})
 var personasCms = personas.map(pasarPersonasAltas);
 console.log(personasCms);
+console.log(personas);
+
+const reducer = (acum, { libros }) => acum + libros
+
+var quantityOfBooks = personas.reduce(reducer, 0);
+console.log(`In summary, the persons have ${quantityOfBooks} books...`);
